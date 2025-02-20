@@ -1,0 +1,99 @@
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo del cuerpo de la página */
+body {
+    font-family: Arial, sans-serif; /* Define el tipo de letra */
+}
+
+/* Estilo de la barra de navegación */
+.navbar {
+    background-color: #333; 
+    padding: 25px 0; 
+    height: 70px;
+    display: flex; 
+    justify-content: center; 
+}
+
+/* Estilos para la lista dentro del menú */
+.navbar ul {
+    list-style: none; 
+    display: flex;
+    gap: 100px; /* Espaciado entre los elementos de la lista */
+}
+
+/* Estilos de los enlaces del menú */
+.navbar ul li a {
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold; /* Hace que el texto sea más grueso */
+}
+
+/* Estilos del contenido principal */
+main {
+    padding: 20px; 
+    margin-top: 20px;
+}
+
+/* Estilos para los párrafos */
+p {
+    margin-top: 15px;
+}
+
+/* Estilos del personalizador */
+#personalizer {
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    background: white;
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 150px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ocultar personalizador por defecto */
+.hidden {
+    display: none;
+}
+
+/* Botones */
+.color-buttons button,
+.text-buttons button {
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 2px;
+}
+
+/* Botones de colores */
+.bg-color[data-color="red"] { background: red; }
+.bg-color[data-color="green"] { background: green; }
+.bg-color[data-color="blue"] { background: blue; }
+.bg-color[data-color="yellow"] { background: yellow; }
+.bg-color[data-color="white"] { background: white; border: 1px solid black; }
+
+.text-color[data-color="red"] { background: red; }
+.text-color[data-color="green"] { background: green; }
+.text-color[data-color="blue"] { background: blue; }
+.text-color[data-color="black"] { background: black; }
+.text-color[data-color="white"] { background: white; border: 1px solid black; }
+
+/* Botones de tamaño de texto */
+.size-buttons button {
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* Botones de fuente */
+.font-buttons button {
+    padding: 5px;
+    cursor: pointer;
+}

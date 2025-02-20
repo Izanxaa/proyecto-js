@@ -1,11 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Menu principal</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="menu.html" id="menupPersonalizer">Personalizer</a></li>
+            <li><a href="form.html">Form</a></li>
+            <li><a href="image.html">Images</a></li>
+        </ul>
+    </nav>
+
+      <!-- Panel Personalizador (Oculto por defecto) -->
+      <div id="personalizer" class="hidden">
+        <p>Bg_color</p>
+        <div class="color-buttons">
+            <button class="bg-color" data-color="red"></button>
+            <button class="bg-color" data-color="green"></button>
+            <button class="bg-color" data-color="blue"></button>
+            <button class="bg-color" data-color="yellow"></button>
+            <button class="bg-color" data-color="white"></button>
+        </div>
+
+        <p>Change_letters</p>
+        <div class="text-buttons">
+            <button class="text-color" data-color="red"></button>
+            <button class="text-color" data-color="green"></button>
+            <button class="text-color" data-color="blue"></button>
+            <button class="text-color" data-color="black"></button>
+            <button class="text-color" data-color="white"></button>
+        </div>
+
+        <p>Size</p>
+        <div class="size-buttons">
+            <button class="text-size" data-size="14px">XS</button>
+            <button class="text-size" data-size="16px">S</button>
+            <button class="text-size" data-size="20px">M</button>
+            <button class="text-size" data-size="24px">L</button>
+            <button class="text-size" data-size="30px">XL</button>
+        </div>
+
+        <p>Font</p>
+        <div class="font-buttons">
+            <button class="text-font" data-font="Arial">A</button>
+            <button class="text-font" data-font="Tahoma">T</button>
+            <button class="text-font" data-font="Courier New">C</button>
+            <button class="text-font" data-font="Fantasy">F</button>
+            <button class="text-font" data-font="Monospace">M</button>
+        </div>
+    </div>
+
+    <main>
+        <h1>Welcome to Personalizer</h1>
+        <p>This is a paragraph that you can adapt its content.</p>
+        <p>Click to Personalizer banner.</p>
+    </main>
     
 </body>
 </html>

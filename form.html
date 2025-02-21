@@ -1,11 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
+    <div class="navbar">
+        <ul>
+            <li><a href="#">Personalizer</a></li>
+            <li><a href="#">Form</a></li>
+            <li><a href="#">Images</a></li>
+            <li><a href="#">Mode</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <form id="userForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" placeholder="Enter your full name">
+
+            <label for="email">Email:</label>
+            <input type="text" id="email">
+            <button type="button" onclick="validateEmail()">Validate</button>
+            <p id="emailMessage"></p>
+
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female" checked> Female
+            <input type="radio" name="gender" value="Other"> Other
+
+            <label for="country">Country:</label>
+            <select id="country" onclick="selectCountry()">
+                <option value="" selected>Select your country</option>
+            </select>
+
+            <div id="provinceContainer" style="display: none;">
+                <label for="province">Province:</label>
+                <select id="province" onclick="selectProvince()">
+                    <option value="" selected>Select your province</option>
+                </select>
+            </div>
+
+            <div id="townContainer" style="display: none;">
+                <label for="town">Town:</label>
+                <select id="town" onclick="selectTown()">
+                    <option value="" selected>Select your town</option>
+                </select>
+            </div>
+
+            <button type="submit">Send</button>
+        </form>
+    </main>
+
+    <script>
+        document.getElementById("userForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            window.location.href = "personalizer.html"; // Redirige a la página personalizer
+        });
+
+        function validateEmail() {
+            let email = document.getElementById("email").value;
+            let emailMessage = document.getElementById("emailMessage");
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+            if (emailRegex.test(email)) {
+                emailMessage.style.color = "green";
+                emailMessage.textContent = email + " is valid :)";
+            } else {
+                emailMessage.style.color = "red";
+                emailMessage.textContent = "Invalid email!";
+            }
+        }
+
+        function selectCountry() {
+            let countrySelect = document.getElementById("country");
+            let provinceContainer = document.getElementById("provinceContainer");
+
+            countrySelect.innerHTML = '<option value="Spain" selected>España</option>';
+            provinceContainer.style.display = "block"; // Muestra province
+        }
+
+        function selectProvince() {
+            let provinceSelect = document.getElementById("province");
+            let townContainer = document.getElementById("townContainer");
+
+            provinceSelect.innerHTML = '<option value="Navarra" selected>Navarra</option>';
+            townContainer.style.display = "block"; // Muestra town
+        }
+
+        function selectTown() {
+            let townSelect = document.getElementById("town");
+            townSelect.innerHTML = '<option value="Pamplona" selected>Pamplona</option>';
+        }
+    </script>
+
 </body>
 </html>

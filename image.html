@@ -6,6 +6,26 @@
     <title>Document</title>
 </head>
 <body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Selecciona todos los enlaces del encabezado
+            let enlaces = document.querySelectorAll(".menu-navegacion a");
+    
+            enlaces.forEach(enlace => {
+                enlace.addEventListener("click", function (event) {
+                    event.preventDefault(); // Evita la recarga de la página
+                    
+                    let destino = this.getAttribute("href"); // Obtiene el destino del enlace
+                    
+                    // Si el enlace es a "Formulario", cambia los estilos
+                    if (destino === "#Formulario") {
+                        document.body.style.backgroundColor = "black"; // Fondo de la página negro
+                        document.getElementById("formulario-usuario").style.backgroundColor = "#333"; // Fondo del formulario gris oscuro
+                    }
+                });
+            });
+        });
+    </script>
     
 </body>
 </html>

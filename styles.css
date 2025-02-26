@@ -146,3 +146,20 @@ button:hover {
 #provinceContainer, #townContainer {
     display: none;
 }
+
+/* Temas oscuros */
+.fondo-oscuro {
+    background-color: black;
+}
+
+.formulario-oscuro {
+    background-color: #333; /* Gris oscuro */
+    color: white; /* Texto en blanco para mejor visibilidad */
+}
+
+
+.contenedor-formulario {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 50px 0;
+}

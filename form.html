@@ -11,13 +11,14 @@
     <div class="navbar">
         <ul>
             <li><a href="#">Personalizer</a></li>
-            <li><a href="#">Form</a></li>
-            <li><a href="#">Images</a></li>
+            <li><a href="form.html">Form</a></li>
+            <li><a href="image.html">Images</a></li>
             <li><a href="#">Mode</a></li>
         </ul>
     </div>
 
-    <main>
+    <div class="contenedor-formulario">
+
         <form id="userForm">
             <label for="fullName">Full Name:</label>
             <input type="text" id="fullName" placeholder="Enter your full name">
@@ -53,7 +54,7 @@
 
             <button type="submit">Send</button>
         </form>
-    </main>
+    </div>
 
     <script>
         document.getElementById("userForm").addEventListener("submit", function(event) {
@@ -95,6 +96,23 @@
             let townSelect = document.getElementById("town");
             townSelect.innerHTML = '<option value="Pamplona" selected>Pamplona</option>';
         }
+
+        // pruebas fondo oscuro
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            // Selecciona el enlace "Formulario"
+            let enlaceFormulario = document.querySelector(".navbar a[href='#Form']");
+
+            if (enlaceFormulario) {
+                enlaceFormulario.addEventListener("click", function (event) {
+                    event.preventDefault(); // Evita la recarga de la página
+
+                    // Agrega las clases para cambiar los estilos
+                    document.body.classList.add("fondo-oscuro");
+                    document.querySelector("form").classList.add("formulario-oscuro");
+                });
+            }
+        });
     </script>
 
 </body>

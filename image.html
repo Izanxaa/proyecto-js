@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <div class="navbar">
+        <ul>
+            <li><a href="#">Personalizer</a></li>
+            <li><a href="form.html">Form</a></li>
+            <li><a href="image.html">Images</a></li>
+            <li><a href="#">Mode</a></li>
+        </ul>
+    </div>
+
+    <div id="fondodiv">
+
+        <h2>Magic Button: Create & Change Images</h2>
+
+        <button>Change Image!</button>
+    </div>
+
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Selecciona todos los enlaces del encabezado
-            let enlaces = document.querySelectorAll(".menu-navegacion a");
-    
-            enlaces.forEach(enlace => {
-                enlace.addEventListener("click", function (event) {
-                    event.preventDefault(); // Evita la recarga de la página
-                    
-                    let destino = this.getAttribute("href"); // Obtiene el destino del enlace
-                    
-                    // Si el enlace es a "Formulario", cambia los estilos
-                    if (destino === "#Formulario") {
-                        document.body.style.backgroundColor = "black"; // Fondo de la página negro
-                        document.getElementById("formulario-usuario").style.backgroundColor = "#333"; // Fondo del formulario gris oscuro
-                    }
-                });
-            });
-        });
     </script>
     
 </body>

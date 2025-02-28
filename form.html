@@ -13,7 +13,7 @@
             <li><a href="menu.html">Personalizer</a></li>
             <li><a href="form.html">Form</a></li>
             <li><a href="image.html">Images</a></li>
-            <li><a href="#">Mode</a></li>
+            <li><a href="#" id="modeButton">Mode</a></li>
         </ul>
     </div>
     
@@ -26,6 +26,7 @@
             <label for="email">Email:</label>
             <input type="text" id="email">
             <button class="button-formulario" type="button" onclick="validarEmail()">Validate</button>
+            <p id="emailMessage"></p>
 
             <label>Gender:</label>
             <div class="opciones">
@@ -93,6 +94,8 @@
         }
 
     </script>
+
+    <script src="dark-mode.js"></script>
 
 </body>
 </html>

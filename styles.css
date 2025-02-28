@@ -110,3 +110,29 @@ button {
 h2 {
     color: blue;
 }
+
+/* Personalizaciones pagina personalizer */
+
+.margen {
+    margin-left: 40px;
+}
+
+/* Modo oscuro */
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode a {
+    color: #ffffff;
+}
+
+.dark-mode .navbar {
+    background-color: #1e1e1e;
+}
+
+.dark-mode #personalizerMenu {
+    background-color: #333;
+    color: white;
+}

@@ -12,54 +12,79 @@
             <li><a href="menu.html" id="menupPersonalizer">Personalizer</a></li>
             <li><a href="form.html">Form</a></li>
             <li><a href="image.html">Images</a></li>
-            <li><a href="#">Mode</a></li>
+            <li><a href="#" id="modeButton">Mode</a></li>
         </ul>
     </nav>
 
-      <!-- Panel Personalizador (Oculto por defecto) -->
-      <div id="personalizer" class="hidden">
-        <p>Bg_color</p>
-        <div class="color-buttons">
-            <button class="bg-color" data-color="red"></button>
-            <button class="bg-color" data-color="green"></button>
-            <button class="bg-color" data-color="blue"></button>
-            <button class="bg-color" data-color="yellow"></button>
-            <button class="bg-color" data-color="white"></button>
+    <div class="margen">
+        <h3>Bg_color</h3>
+        <div>
+            <button onclick="changeBackground('red')">ROJO</button>
+            <button onclick="changeBackground('blue')">AZUL</button>
+            <button onclick="changeBackground('green')">VERDE</button>
+            <button onclick="changeBackground('yellow')">AMARILLO</button>
+            <button onclick="changeBackground('white')">BLANCO</button>
+        </div>
+    
+        <h3>Change_letters</h3>
+        <div>
+            <button onclick="changeTextColor('red')">ROJO</button>
+            <button onclick="changeTextColor('blue')">AZUL</button>
+            <button onclick="changeTextColor('green')">VERDE</button>
+            <button onclick="changeTextColor('purple')">MORADO</button>
+            <button onclick="changeTextColor('black')">NEGRO</button>
         </div>
 
-        <p>Change_letters</p>
-        <div class="text-buttons">
-            <button class="text-color" data-color="red"></button>
-            <button class="text-color" data-color="green"></button>
-            <button class="text-color" data-color="blue"></button>
-            <button class="text-color" data-color="black"></button>
-            <button class="text-color" data-color="white"></button>
+        <h3>Size</h3>
+        <div>
+            <button onclick="changeFontSize('16px')">XS</button>
+            <button onclick="changeFontSize('20px')">S</button>
+            <button onclick="changeFontSize('24px')">M</button>
+            <button onclick="changeFontSize('28px')">L</button>
+            <button onclick="changeFontSize('32px')">XL</button>
         </div>
 
-        <p>Size</p>
-        <div class="size-buttons">
-            <button class="text-size" data-size="14px">XS</button>
-            <button class="text-size" data-size="16px">S</button>
-            <button class="text-size" data-size="20px">M</button>
-            <button class="text-size" data-size="24px">L</button>
-            <button class="text-size" data-size="30px">XL</button>
-        </div>
-
-        <p>Font</p>
-        <div class="font-buttons">
-            <button class="text-font" data-font="Arial">A</button>
-            <button class="text-font" data-font="Tahoma">T</button>
-            <button class="text-font" data-font="Courier New">C</button>
-            <button class="text-font" data-font="Fantasy">F</button>
-            <button class="text-font" data-font="Monospace">M</button>
+        <h3>Font</h3>
+        <div>
+            <button onclick="changeFont('Arial')">A</button>
+            <button onclick="changeFont('Times New Roman')">T</button>
+            <button onclick="changeFont('Courier New')">C</button>
+            <button onclick="changeFont('Fantasy')">F</button>
+            <button onclick="changeFont('Monospace')">M</button>
         </div>
     </div>
 
-    <main>
+    
+    <main id="texto" class="margen"> 
         <h1>Welcome to Personalizer</h1>
         <p>This is a paragraph that you can adapt its content.</p>
         <p>Click to Personalizer banner.</p>
     </main>
-    
+
+    <script>
+        // mi funcion para cambiar el color de fondo
+        function changeBackground(color) {
+            document.body.style.backgroundColor = color;
+        }
+        
+        // mi funcion para cambiar el color del texto
+        function changeTextColor(color) {
+            document.getElementById("texto").style.color = color;
+        }
+        
+        // mi funcion para cambiar el tamaño del texto
+        function changeFontSize(size) {
+            document.getElementById("texto").style.fontSize = size;
+        }
+        
+        // mi funcion para cambiar el tipo de letra
+        function changeFont(font) {
+            document.getElementById("texto").style.fontFamily = font;
+        }
+
+    </script>
+
+    <script src="darkmode.js"></script>
+
 </body>
 </html>

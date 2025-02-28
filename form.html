@@ -16,38 +16,39 @@
             <li><a href="#">Mode</a></li>
         </ul>
     </div>
-
+    
     <div class="contenedor-formulario">
 
-        <form id="userForm">
+        <form action="menu.html">
             <label for="fullName">Full Name:</label>
             <input type="text" id="fullName" placeholder="Enter your full name">
 
             <label for="email">Email:</label>
             <input type="text" id="email">
-            <button type="button" onclick="validateEmail()">Validate</button>
-            <p id="emailMessage"></p>
+            <button type="button" onclick="validarEmail()">Validate</button>
 
             <label>Gender:</label>
-            <input type="radio" name="gender" value="Male"> Male
-            <input type="radio" name="gender" value="Female" checked> Female
-            <input type="radio" name="gender" value="Other"> Other
+            <div class="opciones">
+                <input type="radio" value="Male"> Male
+                <input type="radio" value="Female" checked> Female
+                <input type="radio" value="Other"> Other
+            </div>
 
             <label for="country">Country:</label>
-            <select id="country" onclick="selectCountry()">
+            <select id="country" onclick="apartadoCountry()">
                 <option value="" selected>Select your country</option>
             </select>
-
+            
             <div id="provinceContainer" style="display: none;">
-                <label for="province">Province:</label>
-                <select id="province" onclick="selectProvince()">
+                <label for="province">Province:</label> 
+                <select id="province" onclick="apartadoProvince()">
                     <option value="" selected>Select your province</option>
                 </select>
             </div>
 
             <div id="townContainer" style="display: none;">
                 <label for="town">Town:</label>
-                <select id="town" onclick="selectTown()">
+                <select id="town" onclick="apartadotown()">
                     <option value="" selected>Select your town</option>
                 </select>
             </div>
@@ -57,12 +58,29 @@
     </div>
 
     <script>
-        document.getElementById("userForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            window.location.href = "personalizer.html"; // Redirige a la página personalizer
-        });
 
-        function validateEmail() {
+        function apartadoCountry() {
+            let countrySelect = document.getElementById("country");
+            let provinceContainer = document.getElementById("provinceContainer");
+
+            countrySelect.innerHTML = '<option value="Spain" selected>España</option>';
+            provinceContainer.style.display = "block"; // Muestra province
+        }
+        
+        function apartadoProvince() {
+            let provinceSelect = document.getElementById("province");
+            let townContainer = document.getElementById("townContainer");
+
+            provinceSelect.innerHTML = '<option value="Navarra" selected>Navarra</option>';
+            townContainer.style.display = "block"; // Muestra town
+        }
+
+        function apartadotown() {
+            let townSelect = document.getElementById("town");
+            townSelect.innerHTML = '<option value="Pamplona" selected>Pamplona</option>';
+        }
+
+        function validarEmail() {
             let email = document.getElementById("email").value;
             let emailMessage = document.getElementById("emailMessage");
             let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -76,43 +94,6 @@
             }
         }
 
-        function selectCountry() {
-            let countrySelect = document.getElementById("country");
-            let provinceContainer = document.getElementById("provinceContainer");
-
-            countrySelect.innerHTML = '<option value="Spain" selected>España</option>';
-            provinceContainer.style.display = "block"; // Muestra province
-        }
-
-        function selectProvince() {
-            let provinceSelect = document.getElementById("province");
-            let townContainer = document.getElementById("townContainer");
-
-            provinceSelect.innerHTML = '<option value="Navarra" selected>Navarra</option>';
-            townContainer.style.display = "block"; // Muestra town
-        }
-
-        function selectTown() {
-            let townSelect = document.getElementById("town");
-            townSelect.innerHTML = '<option value="Pamplona" selected>Pamplona</option>';
-        }
-
-        // pruebas fondo oscuro
-    
-        document.addEventListener("DOMContentLoaded", function () {
-            // Selecciona el enlace "Formulario"
-            let enlaceFormulario = document.querySelector(".navbar a[href='#Form']");
-
-            if (enlaceFormulario) {
-                enlaceFormulario.addEventListener("click", function (event) {
-                    event.preventDefault(); // Evita la recarga de la página
-
-                    // Agrega las clases para cambiar los estilos
-                    document.body.classList.add("fondo-oscuro");
-                    document.querySelector("form").classList.add("formulario-oscuro");
-                });
-            }
-        });
     </script>
 
 </body>

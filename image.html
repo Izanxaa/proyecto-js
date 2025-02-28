@@ -10,21 +10,42 @@
 
     <div class="navbar">
         <ul>
-            <li><a href="#">Personalizer</a></li>
+            <li><a href="menu.html">Personalizer</a></li>
             <li><a href="form.html">Form</a></li>
             <li><a href="image.html">Images</a></li>
             <li><a href="#">Mode</a></li>
         </ul>
     </div>
 
-    <div id="fondodiv">
+    <div class="contenedor-images">
+        <h2>Magic Button: Create & Change Image</h2>
+        <button onclick="cambiarImagenManual()">Change Image!</button>
+        <img id="manualImage" src="./imagenes/html.png">
+    </div>
 
-        <h2>Magic Button: Create & Change Images</h2>
-
-        <button>Change Image!</button>
+    <!-- Contenedor de cambio automático -->
+    <div class="contenedor-images">
+        <h2>AutoLoading</h2>
+        <img id="autoImage" src="./imagenes/html.png">
     </div>
 
     <script>
+        let imagenes = ["./imagenes/html.png", "./imagenes/css.png", "./imagenes/js.png", "./imagenes/java.png", "./imagenes/mysql.png", "./imagenes/ruby.png"]; // mis imagenes 
+
+        let contadorManual = 0; // contador para cambio manual
+        let contadorAuto = 0;   // contador cambio automático
+
+        function cambiarImagenManual() {
+            contadorManual = (contadorManual + 1) % imagenes.length; // Pasa a la siguiente imagen
+            document.getElementById("manualImage").src = imagenes[contadorManual];
+        }
+
+        function cambiarImagenAutomatica() {
+            contadorAuto = (contadorAuto + 1) % imagenes.length; // Pasa a la siguiente imagen
+            document.getElementById("autoImage").src = imagenes[contadorAuto];
+        }
+
+        setInterval(cambiarImagenAutomatica, 500); // Hace que cambie la imagen cada 0.5 segundos automaticamente
     </script>
     
 </body>

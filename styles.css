@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Estilos del cuerpo */
 body {
     background-color: #f5f5f5;
     font-family: Arial, sans-serif;
@@ -6,6 +6,7 @@ body {
     padding: 0;
 }
 
+/* Para mi navegador */
 .navbar {
     background-color: #444;
     padding: 10px 0;
@@ -27,6 +28,7 @@ body {
     text-decoration: none;
     font-weight: bold;
 }
+/* Fin de personalizacion para mi navegador */
 
 /* Contenedor del formulario */
 .contenedor-formulario {
@@ -53,7 +55,7 @@ input, select {
     box-sizing: border-box;
 }
 
-button {
+.button-formulario {
     width: 100%;
     padding: 8px;
     margin-top: 10px;
@@ -73,4 +75,38 @@ button:hover {
     align-items: left; /* no se como hacer para que se pongan en la izquierda */
     gap: 15px;
     margin-bottom: 10px;
+}
+/* Fin de personalizacion del formulario */
+
+/* Inicio de la personalizacion de la pagina image */
+.contenedor-images {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px black;
+    max-width: 850px;
+    margin: 20px auto;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 20px 0 30px 0;
+}
+
+button {
+    width: 125px;
+    padding: 8px;
+    margin: 0px 0 20px 0;
+    border: 1px solid #888;
+    border-radius: 5px;
+    background: #eee;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+h2 {
+    color: blue;
 }
